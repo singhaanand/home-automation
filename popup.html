@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button Dialog Example</title>
+    <style>
+      #dialog {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 300px; */
+        padding: 20px;
+        /* background-color: #f0f0f0; */
+        border: 1px solid #ccc;
+      }
+      #dialog1 {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+      }
+      #dialog2 {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+      }
+      #dialog3 {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            transitionTimingFunction: {
+              "in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+              "out-expo": "cubic-bezier(0.19, 1, 0.22, 1)",
+            },
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <button class="bg-indigo-500" onclick="showDialogBedRoom()">Click Me Bed Room</button>
+    <div id="dialog" class=" flex relative  rounded-lg">
+      <h2 class="text-center font-bold font-sans">Bed Room</h2>
+      <button onclick="hideDialogBedRoom()" class="absolute top-0 right-0 h-16 w-16">Close</button>
+      <div class="flex  ">
+      <div class="p-2 m-2"><img
+        id="bedRoomBulb"
+        onclick="changeImageBedRoomBulb()"
+        src="pic_bulboff.gif"
+        width="100"
+        height="180"
+        class=""
+      /></div>
+      <div  class="p-4 m-4 font-bold absolute end-9 top-20	"><button class="rounded-full bg-sky-500 p-2 " id="bedRoomBulbBtn" onclick="changeImageBedRoomBulb()">
+        click me
+      </button></div>
+    </div>
+    <div class="flex relative">
+    <div class="p-2 m-2">  
+    <img
+        id="bedRoomFan"
+        onclick="changeImageBedRoomFan()"
+        src="fan_off.png"
+        width="100"
+        height="180"
+        class="rounded-lg"
+      /></div><div class="p-4 m-4 font-bold absolute end-5 bottom-5">
+      <button class="rounded-full bg-sky-500 p-2 " id="bedRoomFanBtn" onclick="changeImageBedRoomFan()">
+        click me
+      </button></div>
+    </div>
+    </div>
+
+    <button onclick="showDialogKitchen()">Click Me Kitchen</button>
+    <div id="dialog1">
+      <h2>Kitchen</h2>
+      <button onclick="hideDialogredKitchen()">Close</button>
+      <img
+        id="kitchenBulb"
+        onclick="kichenLight()"
+        src="pic_bulboff.gif"
+        width="100"
+        height="180"
+      />
+      <button id="kitchenLightBtn" onclick="kichenLight()">click me</button>
+      <p>Turn Off</p>
+
+      <img
+        id="kitchenFan"
+        onclick="kitchenFan()"
+        src="fan_off.png"
+        width="100"
+        height="180"
+      />
+      <button id="kitchenFanBtn" onclick="kitchenFan()">click me</button>
+      <p>Second bubl turn on/off the light.</p>
+    </div>
+
+    <button onclick="showDialogredHall()">Click Me Hall Details</button>
+    <div id="dialog2">
+      <h2>Hall</h2>
+      <button onclick="hideDialogredHall()">Close</button>
+      <img
+        id="hallLight"
+        onclick="hallLligtBulb()"
+        src="pic_bulboff.gif"
+        width="100"
+        height="180"
+      />
+      <button id="hallLightBtn" onclick="hallLligtBulb()">click me</button>
+      <p>Turn Off</p>
+
+      <img
+        id="hallFan"
+        onclick="hallFan()"
+        src="fan_off.png"
+        width="100"
+        height="180"
+      />
+      <button id="hallFanBtn" onclick="hallFan()">click me</button>
+
+      <p>Second bubl turn on/off the light.</p>
+    </div>
+
+    <button onclick="showDialogredFrontDoor()">Click Me Front Door</button>
+    <div id="dialog3">
+      <h2>Front Door</h2>
+      <button onclick="hideDialogredFrontDoor()">Close</button>
+      <img
+        id="frontDoorBulb"
+        onclick="frontDoorBulb()"
+        src="pic_bulboff.gif"
+        width="100"
+        height="180"
+      />
+      <button id="frontDoorBulbBtn" onclick="frontDoorBulb()">click me</button>
+      <p>Turn Off</p>
+
+      <img
+        id="frontDoorFan"
+        onclick="frontDoorFan()"
+        src="fan_off.png"
+        width="100"
+        height="180"
+      />
+      <button id="frontDoorFanBtn" onclick="frontDoorFan()">click me</button>
+      <p>Second bubl turn on/off the light.</p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
